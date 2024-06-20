@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <!-- Password display -->
+        <div class="display-container">
+            <input readonly placeholder="password" class="display" data-passwordDisplay>
+            <button data-copy>
+                <span data-copyMsg class="hidden"></span>
+                <i class="far fa-copy"></i> <!-- FontAwesome icon for copy -->
+            </button>
+        </div>
+        <!-- Password length input -->
+        <div class="length-container">
+            <p>Password Length</p>
+            <p data-lengthNumber>10</p>
+        </div>
+        <!-- Slider for password length -->
+        <div class="slider-container">
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+            <span class="length-display" data-lengthDisplay></span>
+        </div>
+        <!-- Checkboxes for password options -->
+        <div class="options-container">
+            <div class="option">
+                <input type="checkbox" id="UpperCase">
+                <label for="UpperCase">Include UpperCase letters</label>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="LowerCase">
+                <label for="LowerCase">Include LowerCase letters</label>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="Number">
+                <label for="Number">Include Numbers</label>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="Symbol">
+                <label for="Symbol">Include Symbols</label>
+            </div>
+        </div>
+        <!-- Strength indicator -->
+        <div class="strength-container">
+            <p>Strength</p>
+            <div class="indicator" data-strength="weak">
+                <div class="strength-circle"></div>
+                <div class="strength-circle"></div>
+                <div class="strength-circle"></div>
+            </div>
+        </div>
+        <!-- Generate button -->
+        <button class="generateButton">Generate Password</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
